@@ -1,0 +1,77 @@
+﻿@model StoreApp.Entity.AccountRole
+@{
+
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2></h2>
+
+
+
+@using (Html.BeginForm())
+{
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Rol:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("RoleName", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Description:</label>
+        <div class="col-sm-10">
+            @Html.TextArea("Description", new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Güncelleme Tarihi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("UpdateDate", null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Güncelleyen Kişi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("UpdateBy", null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Silindi Mi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("IsDeleted", null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Ekleme Tarihi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("InsertDate", null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Ekleyen Kişi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("InsertedBy", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Rol:</label>
+            <div class="col-sm-10">
+                @Html.DropDownList("RoleName", new SelectList(ViewBag.AccountRole, "Id", "RoleName"), new { @class = "form-control" })
+
+            </div>
+        </div>*@
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Kaydet</button>
+        </div>
+    </div>
+
+</div>
+}

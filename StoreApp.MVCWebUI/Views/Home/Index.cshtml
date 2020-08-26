@@ -1,0 +1,63 @@
+﻿@model StoreApp.MVCWebUI.Models.HomeListEditModel
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<ul class="menumuz ul">
+    @foreach (var item in Model.CategoryList)
+    {
+
+        <li class="menumuz li a:hover">
+            
+            <a class="active" href="/Home/Index/@item.Id.ToString()">@item.Name</a>
+        </li>
+    }
+</ul>
+
+
+
+
+<div class="row" style="width:1050px;  margin: -300px; margin-left: 180px; float: left !important; position: relative;">
+    @foreach (var item in Model.ProductList)
+    {
+    <div class="column">
+        @*<div class="card" style="height:20px;">
+        @*<p class="text-left">@item.Name</p>*@
+
+        @*<span style="position:absolute; padding:0px;text-align:initial; ">Ürün Adı : @item.Name</span>*@
+
+       
+
+        @* <span>Fiyat : @item.Price TL</span>
+        </div>*@
+        <div class="card" style="width: 18rem; text-align:center;">
+            <img class="card-img-top" src="/Content/images/@item.Image" style="width:100px; height:80px; "alt="Card image cap">
+            <div class="card-body">
+                <h7 style="font-weight:bold;" class="card-title">@item.Name</h7>
+                <p style="font-size:12px;" class="card-text">@item.Description </p>
+                <p class="card-text">Fiyat:@item.Price TL</p>
+                @*@if (Session["ActiveUser"] == null)
+        {
+            <a href="~/Login/Index" class="btn btn-primary">Ürün Detayı</a>
+        }
+        else
+        {
+            <a href="~/Home/Details/@item.Id.ToString()" class="btn btn-primary">Ürün Detayı</a>
+
+        }*@
+                <a href="~/Home/Details/@item.Id.ToString()" class="btn btn-primary">Ürün Detayı</a>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+    }
+</div>
+
+@*style="height:20px;*@
+

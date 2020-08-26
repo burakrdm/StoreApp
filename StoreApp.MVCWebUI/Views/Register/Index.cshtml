@@ -1,0 +1,107 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link href="//fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/all.min.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+            <div class="col-12">
+                <header class="row">
+                    <!-- Top Nav -->
+                    <div class="col-12 bg-dark py-2 d-md-block d-none">
+                        <div class="row">
+                            <div class="col-auto mr-auto">
+                                <ul class="top-nav">
+                                  
+                                </ul>
+                            </div>
+                            <div class="col-auto">
+                                <ul class="top-nav">
+                                    <li>
+                                        <a href="~/Register/Index"><i class="fas fa-user-edit mr-2"></i>Kayıt Ol</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Login/Index"><i class="fas fa-sign-in-alt mr-2"></i>Giriş</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top Nav -->
+                    <!-- Header -->
+                    <div class="col-12 bg-white pt-4">
+                        
+                        <!-- Nav -->
+                    </div>
+                    <!-- Header -->
+                </header>
+            </div>
+            <div class="col-12">
+                <!-- Main Content -->
+                <div class="row">
+                    <div class="col-12 mt-3 text-center text-uppercase">
+                        <h2>Kayıt Ol</h2>
+                    </div>
+                </div>
+                <main class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-8 mx-auto bg-white py-3 mb-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="name">Kullanıcı Adı</label>
+                                        <input type="text" id="name" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Şifre</label>
+                                        <input type="password" id="password" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password-confirm">Şifreyi Onayla</label>
+                                        <input type="password" id="password-confirm" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="agree" class="form-check-input" required>
+                                            <label for="agree" class="form-check-label ml-2">Şartları ve Koşulları Kabul Ediyorum</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button  type="submit" class="btn btn-outline-dark">Kayıt Ol</button>
+                                        
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- Main Content -->
+            </div>
+          
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+﻿@model StoreApp.Entity.AccountUser
+@{
+    
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2></h2>
+
+
+
+@using (Html.BeginForm())
+{
+
+<div class="form-horizontal">
+    @*<div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">AccountRoleId:</label>
+            <div class="col-sm-10">
+                @Html.TextBox("AccountRoleId", null, new { @class = "form-control" })
+            </div>
+        </div>*@
+    @*<div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Personel Adı:</label>
+            <div class="col-sm-10">
+                @Html.DropDownList("PersonId", new SelectList(ViewBag.AccountPerson, "Id", "FirsName"), new { @class = "form-control" })
+
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Personel ID:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("PersonId", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label" style="color:black !important;">Rol:</label>
+        <div class="col-sm-10">
+            @Html.DropDownList("AccountRoleId", new SelectList(ViewBag.AccountRole, "Id", "RoleName"), new { @class = "form-control" })
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Kullanıcı Adı:</label>
+        <div class="col-sm-10">
+            @Html.TextArea("UserName", new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Mail Adresi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("UserMailAddress", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Şifre:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("Password", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Son Giriş Tarihi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("LastLoginDate", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Hesap Kilitli Mi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("LockedOut", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Güncelleme Tarihi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("UpdateDate", null, new { @class = "form-control" }))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Güncelleyen Kişi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("UpdateBy", null, new { @class = "form-control" }))
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Silindi Mi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("IsDeleted", null, new { @class = "form-control" }))
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Ekleme Tarihi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("InsertDate", null, new { @class = "form-control" }))
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="color:black !important;">Ekleyen Kişi:</label>
+        <div class="col-sm-10">
+            @Html.TextBox("InsertBy", null, new { @class = "form-control" }))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Kaydet</button>
+        </div>
+    </div>
+
+
+</div>
+}
+

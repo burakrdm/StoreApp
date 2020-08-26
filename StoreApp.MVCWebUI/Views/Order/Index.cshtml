@@ -1,0 +1,61 @@
+﻿@model StoreApp.MVCWebUI.Models.ProductDetails
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<ul class="menumuz ul">
+    @foreach (var item in Model.CategoryList)
+    {
+
+        <li class="menumuz li a:hover">
+
+            <a class="active" href="/Home/Index/@item.Id.ToString()">@item.Name</a>
+        </li>
+    }
+</ul>
+
+
+<div class="row" style="width:1050px;  margin: -300px; margin-left: 180px; float: left !important; position: relative;">
+
+    <div style=" overflow-y:scroll; height:600px;">
+       
+        <table border=1>
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Açıklama</th>
+                <th>Fiyat</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+
+            @foreach (var itemProduct in Model.ProductList)
+            {
+            <tr>
+
+
+                <td>@itemProduct.Name</td>
+
+                <td>@itemProduct.Description</td>
+
+                <td>@itemProduct.Price</td>
+
+                <td>
+                    <input type="button" value="Sipariş ver" onclick="location.href='@Url.Action("Create/"+@itemProduct.Id.ToString()+"", "Order")'" />
+                </td>
+
+                    @*<td><button onclick="location='/Order/Create?id='+@itemProduct.Id+''">Sipariş Ver</button></td>*@
+
+            </tr>
+            }
+
+        </table>
+
+        
+    </div>
+
+
+</div>
+
+

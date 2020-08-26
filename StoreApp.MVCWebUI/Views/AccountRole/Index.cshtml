@@ -1,0 +1,58 @@
+﻿@model IEnumerable<StoreApp.Entity.AccountRole>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@if (TempData["Updated"] != null)
+{
+    string urun = TempData["Updated"].ToString();
+
+    @*<div class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-ok"></span>
+            <b>@urun</b> isminde kayıt güncellendi.
+        </div>*@
+}
+<hr />
+
+@*<a href="/Category/Create" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        Kayıt Ekle
+    </a>
+    <hr/>*@
+
+<div style=" font-weight:bold !important; margin-left:30px !important; width:50px !important;">
+
+    <a href="/AccountRole/Create">
+        <span>Rol Ekle</span>
+    </a>
+    <hr />
+</div>
+<br />
+
+<table class="table table-bordered table-hover table-striped" style=" margin-left: -60px !important; margin-top:80px !important;width:100%;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Role Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.RoleName</td>
+                <td>@item.Description</td>
+                <td>
+                    @Html.ActionLink("Detay", "Edit", new { id = @item.ID }, new { @class = "btn btn-primary btn-xs" })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

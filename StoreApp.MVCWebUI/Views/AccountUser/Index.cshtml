@@ -1,0 +1,67 @@
+﻿@model IEnumerable<StoreApp.Entity.AccountUser>
+@{
+    
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@*<h3>Kategori Listesi</h3>*@
+
+@if (TempData["Updated"] != null)
+{
+    string urun = TempData["Updated"].ToString();
+
+    @*<div class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-ok"></span>
+            <b>@urun</b> isminde kayıt güncellendi.
+        </div>*@
+}
+<hr />
+
+@*<a href="/Category/Create" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        Kayıt Ekle
+    </a>
+    <hr/>*@
+
+<div style=" font-weight:bold !important; margin-left:30px !important; width:50px !important;">
+
+    <a href="/AccountUser/Create">
+        <span>Kullanıcı Ekle</span>
+    </a>
+    <hr />
+</div>
+<br />
+
+<table class="table table-bordered table-hover table-striped" style=" margin-left: -60px !important; margin-top:70px !important;width:100%;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            
+            <th>Ad</th>
+            <th>Mail Adresi</th>
+            <th>Şifre</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.ID</td>
+            
+            <td>@item.UserName</td>
+            <td>@item.UserMailAddress</td>
+            <td>@item.Password</td>
+            <td>
+                @Html.ActionLink("Detay", "Edit", new { id = @item.ID }, new { @class = "btn btn-primary btn-xs" })
+
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+

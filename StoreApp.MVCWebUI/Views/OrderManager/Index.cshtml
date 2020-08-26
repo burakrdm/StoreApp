@@ -1,0 +1,55 @@
+﻿@model IEnumerable<StoreApp.Entity.Order>
+@{
+
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+
+}
+
+@if (TempData["Updated"] != null)
+{
+    string urun = TempData["Updated"].ToString();
+
+   
+}
+
+<hr />
+
+<div style=" font-weight:bold !important; margin-left:30px !important; width:100px !important;">
+
+    <a href="/OrderManager/Create">
+        <span>Sipariş Ekle</span>
+    </a>
+    <hr />
+</div>
+<br />
+<table class="table table-bordered table-hover table-striped" style=" margin-left: -60px !important; margin-top:80px !important;width:100%;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ürün Id</th>
+            <th>Sipariş Tarihi</th>
+            @*<th>Kullanıcı Id</th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.ProductID</td>
+            <td>@item.OrderDate</td>
+            @*<td>@item.UserId</td>*@
+
+            <td>
+            @Html.ActionLink("Detay", "Edit", new { id = @item.ID }, new { @class = "btn btn-primary btn-xs" })
+
+        </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+

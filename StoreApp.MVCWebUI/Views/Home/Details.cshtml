@@ -1,0 +1,144 @@
+﻿@model StoreApp.MVCWebUI.Models.ProductDetails
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<ul class="menumuz ul">
+    @foreach (var item in Model.CategoryList)
+    {
+
+        <li class="menumuz li a:hover">
+
+            <a class="active" href="/Home/Index/@item.Id.ToString()">@item.Name</a>
+        </li>
+    }
+</ul>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ürün Detayı</title>
+    <link href="//fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/all.min.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+
+            <div class="col-12">
+                <!-- Main Content -->
+                <main class="row" style="width:1050px;  margin: -300px; margin-left: 180px; float: left !important; position: relative;">
+                    <div class="col-12 bg-white py-3 my-3">
+                        <div class="row">
+                            <!-- Product Images -->
+                            <div class="col-lg-5 col-md-12 mb-3">
+                                <div class="col-12 mb-3">
+                                    @foreach (var item in Model.ProductList)
+                                    {
+
+
+                                        <div class="img-large border" style="background-image: url('/Content/images/@item.Image')"></div>
+
+                                    }
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Images -->
+                            <!-- Product Info -->
+                            <div class="col-lg-5 col-md-9">
+                                <div class="col-12 product-name large">
+                                    @foreach (var item in Model.ProductList)
+                                    {
+                                        @item.Name
+                                    }
+
+
+                                </div>
+                                <div class="col-12 px-0">
+                                    <hr>
+                                </div>
+                                <div class="col-12">
+                                    <ul>
+                                        <li>
+                                            @foreach (var item in Model.ProductList)
+                                            {
+                                                @item.Description
+                                            }
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Product Info -->
+                            <!-- Sidebar -->
+                            <div class="col-lg-2 col-md-3 text-center">
+                                <div class="col-12 border-left border-top sidebar h-100">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span class="detail-price">
+                                                @foreach (var item in Model.ProductList)
+                                                {
+                                                    @item.Price
+                                                }
+                                                TL
+                                            </span>
+
+                                        </div>
+                                        <div class="col-xl-5 col-md-9 col-sm-3 col-5 mx-auto mt-3">
+
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            @foreach (var item in Model.ProductList)
+                                            {
+
+                                                if (Session["ActiveUser"] == null)
+                                                {
+                <a href="~/Login/Index" class="btn btn-primary">Sepete Ekle</a>
+                                                }
+                                                else
+                                                {
+               <a href="~/Order/Index/@item.Id.ToString()" class="btn btn-primary">Sepete Ekle</a>
+
+                                                }
+                                                @*<a href="~/Order/Index/@item.Id.ToString()" class="btn btn-primary">Sepete Ekle</a>*@
+
+                                                @*<button class="btn btn-outline-dark" type="button"><i class="fas fa-cart-plus mr-2"></i>Sepete Ekle</button>*@
+                                            }
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </main>
+
+            </div>
+
+
+        </div>
+    </div>
+    @*@RenderBody()*@
+    @*<script type="text/javascript" src="~/Scripts/jquery.min.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+
+</body>
+</html>
+

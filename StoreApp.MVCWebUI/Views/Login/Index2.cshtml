@@ -1,0 +1,189 @@
+﻿@model StoreApp.MVCWebUI.Models.LoginModel
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giriş</title>
+    <link href="//fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/all.min.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+            <div class="col-12">
+                <header class="row">
+                    <!-- Top Nav -->
+                    
+                    <!-- Top Nav -->
+                    <!-- Header -->
+                  
+                    <!-- Header -->
+                </header>
+            </div>
+            <div class="col-12">
+                <!-- Main Content -->
+                <div class="row">
+                  
+                </div>
+                <main class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-8 mx-auto bg-white py-3 mb-4">
+                        <div class="row">
+                            <div class="col-12">
+                                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                                {
+              <fieldset>
+
+
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @if (@ViewBag.Message != null)
+                {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+                }
+                @if (Session["ActiveUser"] == null)
+                {
+
+
+                <table>
+                    <tr>
+                        <td> @Html.LabelFor(a => a.UserName) </td>
+                        <td> @Html.TextBoxFor(a => a.UserName) </td>
+                        <td> @Html.ValidationMessageFor(a => a.UserName) </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(a => a.Password)
+                        </td>
+                        <td>
+                            @Html.PasswordFor(a => a.Password)
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(a => a.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Giriş" />
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+                }
+
+                else
+                {       @Session["ActiveUser"].ToString();
+                        @:Hoşgeldiniz
+                <meta http-equiv="refresh" content="3;url=/Home/Index">
+
+                }
+            </fieldset>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- Main Content -->
+            </div>
+          
+        </div>
+        </div>
+        <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/script.js"></script>
+</body>
+</html>
+
+@*<html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">
+            <title>Giriş</title>
+            <!-- Custom fonts for this template-->
+            <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
+            <!-- Custom styles for this template-->
+            <link href="~/Content/sb-admin.css" rel="stylesheet">
+        </head>
+        <body class="bg-dark">
+
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+              {
+              <fieldset>
+
+
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @if (@ViewBag.Message != null)
+               {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+             }
+                @if (Session["ActiveUser"]==null)
+                {
+
+
+                <table>
+                    <tr>
+                        <td> @Html.LabelFor(a => a.UserName) </td>
+                        <td> @Html.TextBoxFor(a => a.UserName) </td>
+                        <td> @Html.ValidationMessageFor(a => a.UserName) </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(a => a.Password)
+                        </td>
+                        <td>
+                            @Html.PasswordFor(a => a.Password)
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(a => a.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Giriş" />
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+                }
+
+                else
+                {       @Session["ActiveUser"].ToString();
+                        @:Hoşgeldiniz
+                <meta http-equiv="refresh" content="3;url=/Home/Index">
+
+                }
+            </fieldset>
+                }
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="~/Scripts/jquery.min.js"></script>
+            <script src="~/Scripts/js/bootstrap.bundle.min.js"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="~/Scripts/jquery.easing.min.js"></script>
+        </body>
+    </html>*@
+
+
+
